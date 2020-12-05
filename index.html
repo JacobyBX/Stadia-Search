@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+              
     <link rel="stylesheet" href="main.css">
     <meta charset="UTF-8">
     <meta name="mobile-web-app-capable" content="yes">
@@ -11,11 +13,16 @@
 <meta name="msapplication-navbutton-color" content="#ffffff">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="msapplication-starturl" content="/">
+
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/logoicon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/assets/logoicon.png">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Stadia Search</title>
 </head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="//code.jquery.com/jquery-2.0.3.min.js"></script><!-- online jquery.js -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script><!-- online handlebars.js-->
 
@@ -71,20 +78,51 @@ $(document).ready(function () {
     <div class="search-input-container"> 
 
         <br>
+        <i class="material-icons">search</i>
         <input autocomplete="off" 
               class="search-input" type="search" id="mySearch" onkeyup="myFunction();searchStart()" onclick="document.getElementById('tapclose').play();self.location.href = '#'; document.getElementById('search-clear').style.display='block';window.navigator.vibrate(20);"  onload="myFunction()"
-              placeholder="Search Games..." title="Click To Search For Your Character">
+              placeholder="Search Games..." title="Click To Search Games">
                
             </div>
+
+            
           
-    <div id="anchor"></div>
+    <div id="anchor">
+        <div class="slider">
+            <div class="line"></div>
+            <div class="subline inc"></div>
+            <div class="subline dec"></div>
+          </div>
+    </div>
+
+    <a href="#">
+        <button id="top" class="backtop"><i class="material-icons">keyboard_arrow_up</i></button>
+    </a>
+
     
     <script> function myFunction() {
         var e, s, t;
         for (e = document.getElementById("mySearch").value.toUpperCase(), s = document.getElementById("myMenu")
             .getElementsByTagName("li"), t = 0; t < s.length; t++) - 1 < s[t].getElementsByTagName("a")[0]
-            .innerHTML.toUpperCase().indexOf(e) ? s[t].style.display = "inline-block" : s[t].style.display = "none"
+            .innerHTML.toUpperCase().indexOf(e) ? s[t].style.display = "block" : s[t].style.display = "none"
     }</script>
+
+    <script>
+        $(function(){
+	 var lastScrollTop = 0, delta = 5;
+	 $(window).scroll(function(){
+		 var nowScrollTop = $(this).scrollTop();
+		 if(Math.abs(lastScrollTop - nowScrollTop) >= delta){
+		 	if (nowScrollTop > lastScrollTop){
+		 	document.getElementById("top").style.display="block"
+		 	} else {
+                document.getElementById("top").style.display="none"
+			}
+		 lastScrollTop = nowScrollTop;
+		 }
+	 });
+ });
+    </script>
      </div>
 </body>
 

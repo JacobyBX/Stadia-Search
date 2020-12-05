@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="239" height="72" viewBox="0 0 239 72">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="235" height="72" viewBox="0 0 235 72">
   <defs>
     <clipPath id="clip-logo">
-      <rect width="239" height="72"/>
+      <rect width="235" height="72"/>
     </clipPath>
   </defs>
   <g id="logo" clip-path="url(#clip-logo)">
