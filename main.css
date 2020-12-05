@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+*{margin: 0px; padding: 0px;font-family: "Open Sans";}
+
+body {background-color: #202124;}
+
+.search-wrapper {margin: auto; width: 632px}
+
+.logo-container {margin: auto; width: fit-content;}
+
+.game-container {width: 100%; background-color: #2D2E31;margin-bottom: 15px;border-radius: 0.5rem;height: 98px;}
+
+.game-container > img {width: 163px;height: 98px;display: inline-block;border-radius: 0.5rem 0px 0px 0.5rem;}
+
+.text-container  {display: inline-block;width: 64%;vertical-align: top;    margin-top: 24px;
+    margin-left: 24px;}
+
+.text-container > h3 {font-size: 16px;color:rgba(255,255,255,.9);margin-bottom: 4px;}
+
+.text-container > p {color: rgba(255,255,255,.9)}
+
+li > a {text-decoration: none;}
+
+
+
+ul {list-style-type: none;}

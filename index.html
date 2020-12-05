@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="UAS">
+<meta name="apple-mobile-web-app-title" content="UAS">
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-navbutton-color" content="#ffffff">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-starturl" content="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Stadia Search</title>
+</head>
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script><!-- online jquery.js -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script><!-- online handlebars.js-->
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/stadiaSearch/sheet1', function (data) {
+      var template = Handlebars.compile($('#item-template').html())
+      $('#anchor').html(template(data.sheet1))
+  })
+})
+</script>
+
+<script>
+</script>
+
+<script id="item-template" type="text/x-handlebars-template">
+
+
+    <ul id="myMenu" class="result-list vivify fadeIn  "
+        style="padding-left-start {0px;}">
+{{#each this}}
+<li>
+    <a href="{{link}}" target="_blank">
+        <div class="game-container">
+            <img src="{{image}}">
+            <div class="text-container">
+                <h3>{{name}}</h3>
+                <p>{{price}} · {{type}}</p>
+            </div>
+          
+        
+        </div>
+       
+    </a>
+</li>
+
+
+{{/each}}
+</ul>
+
+</script>
+
+<body>
+    <div class="search-wrapper">
+<div class="logo-container">
+    <img src="Assets/logo.svg">
+</div>
+   
+    <div class="search-input-container"> 
+
+        <br>
+        <input autocomplete="off" 
+              class="search-input" type="search" id="mySearch" onkeyup="myFunction();searchStart()" onclick="document.getElementById('tapclose').play();self.location.href = '#'; document.getElementById('search-clear').style.display='block';window.navigator.vibrate(20);"  onload="myFunction()"
+              placeholder="Search Games..." title="Click To Search For Your Character">
+               
+            </div>
+          
+    <div id="anchor"></div>
+    
+    <script> function myFunction() {
+        var e, s, t;
+        for (e = document.getElementById("mySearch").value.toUpperCase(), s = document.getElementById("myMenu")
+            .getElementsByTagName("li"), t = 0; t < s.length; t++) - 1 < s[t].getElementsByTagName("a")[0]
+            .innerHTML.toUpperCase().indexOf(e) ? s[t].style.display = "inline-block" : s[t].style.display = "none"
+    }</script>
+     </div>
+</body>
+
+
+</html>
